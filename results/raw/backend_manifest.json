@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "checks": {
+    "PySAT/Glucose3": {
+      "installed_or_callable": true,
+      "smoke_status": "SAT",
+      "raw_status": "True",
+      "usable": true,
+      "error": null
+    },
+    "PySAT/CaDiCaL": {
+      "installed_or_callable": true,
+      "smoke_status": "SAT",
+      "raw_status": "True",
+      "usable": true,
+      "error": null
+    },
+    "CPLEX MIP": {
+      "installed_or_callable": true,
+      "smoke_status": "SAT",
+      "raw_status": "integer optimal solution",
+      "usable": true,
+      "error": null
+    },
+    "CPLEX CP Optimizer": {
+      "installed_or_callable": true,
+      "smoke_status": "FEASIBLE",
+      "raw_status": "feasible",
+      "usable": true,
+      "error": null
+    },
+    "OR-Tools CP-SAT": {
+      "installed_or_callable": false,
+      "smoke_status": "ERROR",
+      "raw_status": null,
+      "usable": false,
+      "error": "dependency unavailable: No module named 'ortools'"
+    },
+    "Gurobi": {
+      "installed_or_callable": false,
+      "smoke_status": "ERROR",
+      "raw_status": null,
+      "usable": false,
+      "error": "dependency unavailable: No module named 'gurobipy'"
+    }
+  }
+}

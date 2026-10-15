@@ -1,0 +1,138 @@
+\documentclass[a4paper,fleqn]{cas-sc}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\begin{document}
+\shorttitle{SAT and Exact N-Queens Solvers}
+\title [mode = title]{SAT and Exact Solver Comparisons for N-Queens}
+\author[1]{Assignment 1}
+\affiliation[1]{organization={Course project}, city={Local environment}}
+\begin{abstract}
+We evaluate N-Queens using PySAT/Glucose3 with pairwise and sequential CNF
+encodings, CPLEX MIP, and CPLEX CP Optimizer. The comparison benchmark has
+three trials for each supported configuration at $N=1,2,3,4,8,16$, producing
+72 records. PySAT and CP Optimizer completed their records; CPLEX MIP reached
+the Community Edition model-size limit at $N=16$. Gurobi and OR-Tools were not
+available, so no results are claimed for them.
+\end{abstract}
+\maketitle
+
+\section{Introduction and problem formulation}
+N-Queens asks for one placement of $N$ queens on an $N\times N$ board with no
+shared row, column, or diagonal. The SAT variable $x_{r,c}$ means that row $r$
+contains a queen in column $c$. Row and column exactly-one constraints and
+binary diagonal exclusions define the CNF model.
+
+\section{Methods}
+The SAT implementation uses pairwise AMO and Sinz sequential AMO encodings.
+PySAT/Glucose3 is the SAT backend. CPLEX MIP uses binary cell variables, exact
+row and column constraints, and pairwise diagonal inequalities. CPLEX CP
+Optimizer uses one integer column variable per row, an all-different
+constraint, and pairwise diagonal inequalities. All returned solutions pass
+the independent \texttt{validate_solution} validator. The OR-Tools adapter is
+implemented but the package is unavailable. Gurobi is not installed.
+
+\section{Experimental setup}
+The comparison schema records instance size, method, solver and version,
+encoding, trial, timeout, model-build time, solve time, total wall time, model
+size, status, validation, and error. The benchmark used Python 3.11.9 on
+Windows 10, a 10-second timeout, and three trials. Total wall time includes the
+adapter call; build and solve times are recorded separately. Medians exclude
+ERROR and TIMEOUT records. The artifacts are
+\texttt{results/raw/benchmark_comparison.json},
+\texttt{results/raw/benchmark_comparison.csv}, and
+\texttt{results/raw/benchmark_comparison_summary.json}.
+
+\section{Correctness and results}
+The latest test run passed 15 tests. The historical SAT benchmark contains 80
+records: 60 SAT and 20 UNSAT. The new comparison benchmark contains 72 records:
+PySAT has 24 SAT and 12 UNSAT; CPLEX CP Optimizer has 12 SAT and 6 UNSAT; and
+CPLEX MIP has 9 SAT, 6 UNSAT, and 3 ERROR. The CPLEX MIP errors at $N=16$
+are explicit Community Edition failures: 256 variables and 2512 constraints
+exceed the 1000-variable/1000-constraint promotional limits.
+
+\begin{table}[h]
+\centering
+\caption{Median total wall time in seconds for selected completed configurations.}
+\label{tab:comparison}
+\begin{tabular}{lrrrr}
+\toprule
+Method & $N=4$ & $N=8$ & $N=16$ & Trials per cell\\
+\midrule
+PySAT pairwise & 0.000347 & 0.000852 & 0.016355 & 3\\
+PySAT sequential & 0.000343 & 0.000911 & 0.004742 & 3\\
+CPLEX MIP & 0.008487 & 0.016853 & -- & 3\\
+CPLEX CP Optimizer & 0.031967 & 0.033417 & 0.038857 & 3\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The sequential encoding was faster than pairwise at $N=16$ in this run, while
+their runtimes were similar at $N=8$. CPLEX CP Optimizer completed $N=16$,
+whereas CPLEX MIP did not because of the promotional limit. These are
+environment-specific observations, not a universal ranking. The historical
+SAT-only results through $N=64$ remain separate from this comparison artifact.
+
+\section{Approved medium encoding matrix}
+An additional matrix was executed after adding Binary and Commander AMO
+encodings and the CaDiCaL backend. The correctness matrix contains 40 records:
+four SAT encodings with each of Glucose3 and CaDiCaL, plus CPLEX MIP and CP
+Optimizer, on $N=1,2,3,4$. The performance matrix contains 87 records over
+$N=4,8,16$, three repetitions, and a 10-second timeout. CPLEX MIP was measured
+only at $N=4,8$; $N=16$ was excluded after the verified Community Edition limit.
+
+The new artifacts are
+\texttt{results/raw/benchmark\_medium\_correctness.*} and
+\texttt{results/raw/benchmark\_medium\_performance.*}. Every SAT or FEASIBLE
+solution passed the independent validator. The normalized statuses preserve
+SAT, UNSAT, FEASIBLE, TIMEOUT, ERROR, and LICENSE\_LIMIT, while
+\texttt{raw\_status} retains the backend status. Binary and Commander were
+evaluated as additional SAT encodings, not as different problem models.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{../results/figures/medium/runtime_by_method.svg}
+\caption{Median total runtime for the approved medium performance matrix. The vertical scale is logarithmic.}
+\label{fig:medium-runtime}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.85\linewidth]{../results/figures/comparison/runtime_by_solver.svg}
+\caption{Median total wall time by available solver and SAT encoding. ERROR and missing configurations are omitted from successful runtime series.}
+\label{fig:comparison-runtime}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.85\linewidth]{../results/figures/comparison/completed_by_solver.svg}
+\caption{Completed trials by available solver and instance size.}
+\label{fig:comparison-completion}
+\end{figure}
+
+\section{Discussion and limitations}
+The comparison uses one machine, one run process, three repetitions, and
+different model paradigms. Solver startup and model construction affect total
+wall time. CPLEX Community Edition limits the MIP comparison at larger sizes.
+No Gurobi or OR-Tools measurements exist. SVG figures require a LaTeX setup
+that supports SVG or prior conversion to PDF/PNG; conversion was not performed
+because no LaTeX toolchain was available.
+
+\section{Conclusion and future work}
+The project now has independently validated SAT, CPLEX MIP, and CPLEX CP
+adapters and a reproducible multi-solver benchmark. Future work is to repeat
+the comparison in a licensed full CPLEX environment and with Gurobi and
+OR-Tools installed, using the same schema and timeout policy.
+
+\section*{Data Availability}
+The repository remote is
+\url{https://github.com/DunnTapCodee/N-Queens-Solver}. Reproduction commands
+and artifact paths are documented in \texttt{README.md}. Historical SAT files
+are preserved separately from the comparison files.
+
+\begin{thebibliography}{00}
+\bibitem{sinz} C. Sinz, "Towards an optimal CNF encoding of Boolean cardinality constraints," CP, 2005.
+\bibitem{pysat} A. Ignatiev et al., "PySAT: A Python toolkit for prototyping with SAT oracles," SAT, 2018.
+\end{thebibliography}
+\end{document}
+

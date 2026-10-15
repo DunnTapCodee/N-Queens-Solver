@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "schema_version": 1,
+    "timestamp_utc": "2026-10-15T02:35:50.622766+00:00",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "timeout_s": 10.0,
+    "repetitions": 1,
+    "availability": {
+      "CPLEX MIP": {
+        "installed": true,
+        "usable": null,
+        "version": "22.2.0.0",
+        "note": "smoke-tested by benchmark when selected"
+      },
+      "CPLEX CP Optimizer": {
+        "installed": true,
+        "usable": null,
+        "version": "22.2.0.0",
+        "note": "smoke-tested by benchmark when selected"
+      },
+      "Gurobi": {
+        "installed": false,
+        "usable": false,
+        "version": null,
+        "note": "not installed: No module named 'gurobipy'"
+      },
+      "OR-Tools CP-SAT": {
+        "installed": false,
+        "usable": false,
+        "version": null,
+        "note": "not installed: No module named 'ortools'"
+      },
+      "PySAT/Glucose3": {
+        "installed": true,
+        "usable": null,
+        "version": "1.9.dev15",
+        "note": "smoke-tested by benchmark when selected"
+      }
+    }
+  },
+  "summaries": [
+    {
+      "solver": "PySAT/Glucose3",
+      "encoding": "pairwise",
+      "trials": 5,
+      "sat": 3,
+      "unsat": 2,
+      "timeouts": 0,
+      "errors": 0,
+      "median_total_time_s": 0.00035329998354427516,
+      "mean_total_time_s": 0.022229539998807012,
+      "stdev_total_time_s": 0.04868398144937208,
+      "median_build_time_s": 2.3200002033263445e-05,
+      "median_solve_time_s": 0.0002832000027410686,
+      "nvars": 1,
+      "nconstraints": 2
+    },
+    {
+      "solver": "PySAT/Glucose3",
+      "encoding": "sequential",
+      "trials": 5,
+      "sat": 3,
+      "unsat": 2,
+      "timeouts": 0,
+      "errors": 0,
+      "median_total_time_s": 0.0003532000118866563,
+      "mean_total_time_s": 0.0004816400003619492,
+      "stdev_total_time_s": 0.00029893461710564035,
+      "median_build_time_s": 3.0300026992335916e-05,
+      "median_solve_time_s": 0.0003110000106971711,
+      "nvars": 1,
+      "nconstraints": 2
+    },
+    {
+      "solver": "CPLEX MIP",
+      "encoding": "n/a",
+      "trials": 5,
+      "sat": 3,
+      "unsat": 2,
+      "timeouts": 0,
+      "errors": 0,
+      "median_total_time_s": 0.008323000016389415,
+      "mean_total_time_s": 0.14851222000434064,
+      "stdev_total_time_s": 0.3108358656298045,
+      "median_build_time_s": 0.0030078999989200383,
+      "median_solve_time_s": 0.004880299995420501,
+      "nvars": 1,
+      "nconstraints": 2
+    },
+    {
+      "solver": "CPLEX CP Optimizer",
+      "encoding": "n/a",
+      "trials": 5,
+      "sat": 3,
+      "unsat": 2,
+      "timeouts": 0,
+      "errors": 0,
+      "median_total_time_s": 0.04102890001377091,
+      "mean_total_time_s": 0.04862492000102066,
+      "stdev_total_time_s": 0.019867123242505634,
+      "median_build_time_s": 0.0005335999885573983,
+      "median_solve_time_s": 0.0396240999980364,
+      "nvars": 1,
+      "nconstraints": 1
+    }
+  ]
+}

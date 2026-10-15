@@ -1,0 +1,626 @@
+{
+  "schema_version": 2,
+  "metadata": {
+    "scope": "approved medium matrix",
+    "schema_version": 2,
+    "timestamp_utc": "2026-10-15T05:01:10.865635+00:00",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "timeout_s": 10.0,
+    "repetitions": 3,
+    "excluded": {
+      "CPLEX MIP": "N=16 omitted after verified Community Edition limit"
+    }
+  },
+  "summaries": [
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "pairwise",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.00036539998836815357,
+      "median_build_time_s": 3.329999162815511e-05,
+      "median_solve_time_s": 0.00030789998709224164,
+      "nvars": 16,
+      "nclauses": 84,
+      "nconstraints": 84
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "sequential",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.00030869999318383634,
+      "median_build_time_s": 3.2800016924738884e-05,
+      "median_solve_time_s": 0.0002503999858163297,
+      "nvars": 40,
+      "nclauses": 100,
+      "nconstraints": 100
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "binary",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.00033370000892318785,
+      "median_build_time_s": 4.069998976774514e-05,
+      "median_solve_time_s": 0.0002714000002015382,
+      "nvars": 32,
+      "nclauses": 100,
+      "nconstraints": 100
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "commander",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.00031010000384412706,
+      "median_build_time_s": 4.560002707876265e-05,
+      "median_solve_time_s": 0.00024319998919963837,
+      "nvars": 32,
+      "nclauses": 116,
+      "nconstraints": 116
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "pairwise",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0008233000116888434,
+      "median_build_time_s": 0.0001534000039100647,
+      "median_solve_time_s": 0.0006262000242713839,
+      "nvars": 64,
+      "nclauses": 744,
+      "nconstraints": 744
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "sequential",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0008970999915618449,
+      "median_build_time_s": 0.00013149998267181218,
+      "median_solve_time_s": 0.0007201999833341688,
+      "nvars": 176,
+      "nclauses": 616,
+      "nconstraints": 616
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "binary",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0007919000054243952,
+      "median_build_time_s": 0.00016060000052675605,
+      "median_solve_time_s": 0.0005939999828115106,
+      "nvars": 112,
+      "nclauses": 680,
+      "nconstraints": 680
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "commander",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0007100000220816582,
+      "median_build_time_s": 0.0001550000160932541,
+      "median_solve_time_s": 0.0005112999933771789,
+      "nvars": 112,
+      "nclauses": 632,
+      "nconstraints": 632
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "pairwise",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.018972699996083975,
+      "median_build_time_s": 0.0013835999998264015,
+      "median_solve_time_s": 0.016864000004716218,
+      "nvars": 256,
+      "nclauses": 6352,
+      "nconstraints": 6352
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "sequential",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.00393520001671277,
+      "median_build_time_s": 0.0008379000064451247,
+      "median_solve_time_s": 0.002869099989766255,
+      "nvars": 736,
+      "nclauses": 3920,
+      "nconstraints": 3920
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "binary",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.006012199999531731,
+      "median_build_time_s": 0.001523799990536645,
+      "median_solve_time_s": 0.002875400008633733,
+      "nvars": 384,
+      "nclauses": 4560,
+      "nconstraints": 4560
+    },
+    {
+      "solver": "PySAT/glucose3",
+      "encoding": "commander",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.003438700019614771,
+      "median_build_time_s": 0.0009945000056177378,
+      "median_solve_time_s": 0.0022745000023860484,
+      "nvars": 512,
+      "nclauses": 4176,
+      "nconstraints": 4176
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "pairwise",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.000686399987898767,
+      "median_build_time_s": 2.929999027401209e-05,
+      "median_solve_time_s": 0.0006377999961841851,
+      "nvars": 16,
+      "nclauses": 84,
+      "nconstraints": 84
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "sequential",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0009113000123761594,
+      "median_build_time_s": 3.6999990697950125e-05,
+      "median_solve_time_s": 0.0008473999914713204,
+      "nvars": 40,
+      "nclauses": 100,
+      "nconstraints": 100
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "binary",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0007886000094003975,
+      "median_build_time_s": 4.05999890062958e-05,
+      "median_solve_time_s": 0.0007263000006787479,
+      "nvars": 32,
+      "nclauses": 100,
+      "nconstraints": 100
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "commander",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0007610000029671937,
+      "median_build_time_s": 4.809998790733516e-05,
+      "median_solve_time_s": 0.0006925000052433461,
+      "nvars": 32,
+      "nclauses": 116,
+      "nconstraints": 116
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "pairwise",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0012388000031933188,
+      "median_build_time_s": 0.0001412999990861863,
+      "median_solve_time_s": 0.0010553000029176474,
+      "nvars": 64,
+      "nclauses": 744,
+      "nconstraints": 744
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "sequential",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0014977000246290118,
+      "median_build_time_s": 0.0001340000017080456,
+      "median_solve_time_s": 0.0013129999861121178,
+      "nvars": 176,
+      "nclauses": 616,
+      "nconstraints": 616
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "binary",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.002133100002538413,
+      "median_build_time_s": 0.00017090002074837685,
+      "median_solve_time_s": 0.0019028999959118664,
+      "nvars": 112,
+      "nclauses": 680,
+      "nconstraints": 680
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "commander",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.00144599998020567,
+      "median_build_time_s": 0.0001750999945215881,
+      "median_solve_time_s": 0.001232199982041493,
+      "nvars": 112,
+      "nclauses": 632,
+      "nconstraints": 632
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "pairwise",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.019508600002154708,
+      "median_build_time_s": 0.0010844000207725912,
+      "median_solve_time_s": 0.018215500022051856,
+      "nvars": 256,
+      "nclauses": 6352,
+      "nconstraints": 6352
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "sequential",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.0045686999801546335,
+      "median_build_time_s": 0.0008620000153314322,
+      "median_solve_time_s": 0.0032712999964132905,
+      "nvars": 736,
+      "nclauses": 3920,
+      "nconstraints": 3920
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "binary",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.011173000006237999,
+      "median_build_time_s": 0.0009926000202540308,
+      "median_solve_time_s": 0.010059499996714294,
+      "nvars": 384,
+      "nclauses": 4560,
+      "nconstraints": 4560
+    },
+    {
+      "solver": "PySAT/cadical195",
+      "encoding": "commander",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.010960000014165416,
+      "median_build_time_s": 0.000960400007897988,
+      "median_solve_time_s": 0.009762600006069988,
+      "nvars": 512,
+      "nclauses": 4176,
+      "nconstraints": 4176
+    },
+    {
+      "solver": "CPLEX MIP",
+      "encoding": "n/a",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.007817600009730086,
+      "median_build_time_s": 0.0021895999961998314,
+      "median_solve_time_s": 0.005144400027347729,
+      "nvars": 16,
+      "nclauses": null,
+      "nconstraints": 36
+    },
+    {
+      "solver": "CPLEX MIP",
+      "encoding": "n/a",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 3,
+        "UNSAT": 0,
+        "FEASIBLE": 0,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.01584570002160035,
+      "median_build_time_s": 0.00807770001119934,
+      "median_solve_time_s": 0.0074001000029966235,
+      "nvars": 64,
+      "nclauses": null,
+      "nconstraints": 296
+    },
+    {
+      "solver": "CPLEX CP Optimizer",
+      "encoding": "n/a",
+      "n": 4,
+      "trials": 3,
+      "statuses": {
+        "SAT": 0,
+        "UNSAT": 0,
+        "FEASIBLE": 3,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.02990779999527149,
+      "median_build_time_s": 0.0005512000061571598,
+      "median_solve_time_s": 0.02935510000679642,
+      "nvars": 4,
+      "nclauses": null,
+      "nconstraints": 13
+    },
+    {
+      "solver": "CPLEX CP Optimizer",
+      "encoding": "n/a",
+      "n": 8,
+      "trials": 3,
+      "statuses": {
+        "SAT": 0,
+        "UNSAT": 0,
+        "FEASIBLE": 3,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.030009600013727322,
+      "median_build_time_s": 0.0008933999924920499,
+      "median_solve_time_s": 0.029076900013023987,
+      "nvars": 8,
+      "nclauses": null,
+      "nconstraints": 57
+    },
+    {
+      "solver": "CPLEX CP Optimizer",
+      "encoding": "n/a",
+      "n": 16,
+      "trials": 3,
+      "statuses": {
+        "SAT": 0,
+        "UNSAT": 0,
+        "FEASIBLE": 3,
+        "OPTIMAL": 0,
+        "TIMEOUT": 0,
+        "ERROR": 0,
+        "LICENSE_LIMIT": 0
+      },
+      "median_total_time_s": 0.03632019998622127,
+      "median_build_time_s": 0.0018213999865110964,
+      "median_solve_time_s": 0.034179700014647096,
+      "nvars": 16,
+      "nclauses": null,
+      "nconstraints": 241
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="28" text-anchor="middle" font-size="20">SAT clauses versus N</text>
+<text x="20" y="260.0" transform="rotate(-90 20 260.0)" text-anchor="middle">Clauses</text>
+<line x1="90" y1="450" x2="870" y2="450" stroke="black"/><line x1="90" y1="30" x2="90" y2="450" stroke="black"/>
+<polyline points="90.0,450.0 102.4,450.0 114.8,450.0 127.1,449.9 176.7,449.3 275.7,443.8 473.8,398.4 870.0,30.0" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="90.0" cy="450.0" r="4" fill="#2563eb"/>
+<circle cx="102.4" cy="450.0" r="4" fill="#2563eb"/>
+<circle cx="114.8" cy="450.0" r="4" fill="#2563eb"/>
+<circle cx="127.1" cy="449.9" r="4" fill="#2563eb"/>
+<circle cx="176.7" cy="449.3" r="4" fill="#2563eb"/>
+<circle cx="275.7" cy="443.8" r="4" fill="#2563eb"/>
+<circle cx="473.8" cy="398.4" r="4" fill="#2563eb"/>
+<circle cx="870.0" cy="30.0" r="4" fill="#2563eb"/>
+<line x1="720" y1="55" x2="740" y2="55" stroke="#2563eb" stroke-width="3"/><text x="748" y="60">pairwise</text>
+<polyline points="90.0,450.0 102.4,450.0 114.8,450.0 127.1,449.9 176.7,449.4 275.7,446.2 473.8,423.8 870.0,259.1" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="90.0" cy="450.0" r="4" fill="#dc2626"/>
+<circle cx="102.4" cy="450.0" r="4" fill="#dc2626"/>
+<circle cx="114.8" cy="450.0" r="4" fill="#dc2626"/>
+<circle cx="127.1" cy="449.9" r="4" fill="#dc2626"/>
+<circle cx="176.7" cy="449.4" r="4" fill="#dc2626"/>
+<circle cx="275.7" cy="446.2" r="4" fill="#dc2626"/>
+<circle cx="473.8" cy="423.8" r="4" fill="#dc2626"/>
+<circle cx="870.0" cy="259.1" r="4" fill="#dc2626"/>
+<line x1="720" y1="77" x2="740" y2="77" stroke="#dc2626" stroke-width="3"/><text x="748" y="82">sequential</text>
+<text x="90.0" y="472" text-anchor="middle">1</text>
+<text x="102.4" y="472" text-anchor="middle">2</text>
+<text x="114.8" y="472" text-anchor="middle">3</text>
+<text x="127.1" y="472" text-anchor="middle">4</text>
+<text x="176.7" y="472" text-anchor="middle">8</text>
+<text x="275.7" y="472" text-anchor="middle">16</text>
+<text x="473.8" y="472" text-anchor="middle">32</text>
+<text x="870.0" y="472" text-anchor="middle">64</text>
+</svg>

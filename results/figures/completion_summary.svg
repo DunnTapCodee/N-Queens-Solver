@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="28" text-anchor="middle" font-size="20">Completed trials by N</text>
+<text x="20" y="260.0" transform="rotate(-90 20 260.0)" text-anchor="middle">Completed trials</text>
+<line x1="90" y1="450" x2="870" y2="450" stroke="black"/><line x1="90" y1="30" x2="90" y2="450" stroke="black"/>
+<polyline points="90.0,450.0" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="90.0" cy="450.0" r="4" fill="#2563eb"/>
+<line x1="720" y1="55" x2="740" y2="55" stroke="#2563eb" stroke-width="3"/><text x="748" y="60">pairwise (completed)</text>
+<polyline points="90.0,450.0" fill="none" stroke="#dc2626" stroke-width="3"/>
+<circle cx="90.0" cy="450.0" r="4" fill="#dc2626"/>
+<line x1="720" y1="77" x2="740" y2="77" stroke="#dc2626" stroke-width="3"/><text x="748" y="82">sequential (completed)</text>
+<text x="90.0" y="472" text-anchor="middle">64</text>
+</svg>
