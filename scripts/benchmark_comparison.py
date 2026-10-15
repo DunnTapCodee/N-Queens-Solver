@@ -13,6 +13,7 @@ from nqueens.cplex_cp import solve_cplex_cp
 from nqueens.cplex_mip import solve_cplex_mip
 from nqueens.cp_sat import solve_cp_sat
 from nqueens.solver import solve as solve_sat
+from nqueens.gurobi import solve_gurobi
 
 
 def solver_version(name: str) -> str | None:
@@ -23,6 +24,9 @@ def solver_version(name: str) -> str | None:
         if name in {"PySAT/Glucose3", "PySAT/CaDiCaL"}:
             import pysat
             return getattr(pysat, "__version__", "unknown")
+        if name == "Gurobi":
+            import gurobipy
+            return getattr(gurobipy, "__version__", None) or str(gurobipy.version())
         if name == "OR-Tools CP-SAT":
             import ortools
             return getattr(ortools, "__version__", "unknown")
@@ -36,7 +40,7 @@ def availability() -> dict[str, dict[str, object]]:
     for label, module in (("CPLEX MIP", "docplex"), ("CPLEX CP Optimizer", "docplex"), ("Gurobi", "gurobipy"), ("OR-Tools CP-SAT", "ortools"), ("PySAT/Glucose3", "pysat"), ("PySAT/CaDiCaL", "pysat")):
         try:
             __import__(module)
-            result[label] = {"installed": True, "usable": label in {"PySAT/Glucose3", "PySAT/CaDiCaL", "CPLEX MIP", "CPLEX CP Optimizer"}, "version": solver_version(label), "note": "backend instantiation checked; benchmark status recorded separately"}
+            result[label] = {"installed": True, "usable": label in {"PySAT/Glucose3", "PySAT/CaDiCaL", "CPLEX MIP", "CPLEX CP Optimizer", "Gurobi"}, "version": solver_version(label), "note": "backend instantiation checked; benchmark status recorded separately"}
         except ImportError as exc:
             result[label] = {"installed": False, "usable": False, "version": None, "note": f"not installed: {exc}"}
     return result
@@ -49,6 +53,7 @@ def dispatch(name: str, n: int, encoding: str, timeout: float):
     if name == "CPLEX MIP": return solve_cplex_mip(n, timeout)
     if name == "CPLEX CP Optimizer": return solve_cplex_cp(n, timeout)
     if name == "OR-Tools CP-SAT": return solve_cp_sat(n, timeout)
+    if name == "Gurobi": return solve_gurobi(n, timeout)
     raise ValueError(f"unsupported solver: {name}")
 
 
@@ -68,7 +73,7 @@ def make_summary(records: list[dict]) -> list[dict]:
     result = []
     for (solver, encoding, n), group in groups.items():
         completed = [r["total_time_s"] for r in group if r["status"] in ("SAT", "UNSAT", "FEASIBLE", "OPTIMAL")]
-        result.append({"n": n, "solver": solver, "encoding": encoding, "trials": len(group), "sat": sum(r["status"] == "SAT" for r in group), "unsat": sum(r["status"] == "UNSAT" for r in group), "timeouts": sum(r["status"] == "TIMEOUT" for r in group), "errors": sum(r["status"] == "ERROR" for r in group), "median_total_time_s": statistics.median(completed) if completed else None, "mean_total_time_s": statistics.mean(completed) if completed else None, "stdev_total_time_s": statistics.stdev(completed) if len(completed) > 1 else None, "median_build_time_s": statistics.median(r["build_time_s"] for r in group), "median_solve_time_s": statistics.median(r["solve_time_s"] for r in group), "nvars": group[0]["nvars"], "nconstraints": group[0]["nconstraints"]})
+        result.append({"n": n, "solver": solver, "encoding": encoding, "trials": len(group), "sat": sum(r["status"] == "SAT" for r in group), "unsat": sum(r["status"] == "UNSAT" for r in group), "feasible": sum(r["status"] == "FEASIBLE" for r in group), "optimal": sum(r["status"] == "OPTIMAL" for r in group), "timeouts": sum(r["status"] == "TIMEOUT" for r in group), "errors": sum(r["status"] == "ERROR" for r in group), "license_limits": sum(r["status"] == "LICENSE_LIMIT" for r in group), "median_total_time_s": statistics.median(completed) if completed else None, "mean_total_time_s": statistics.mean(completed) if completed else None, "stdev_total_time_s": statistics.stdev(completed) if len(completed) > 1 else None, "median_build_time_s": statistics.median(r["build_time_s"] for r in group), "median_solve_time_s": statistics.median(r["solve_time_s"] for r in group), "nvars": group[0]["nvars"], "nconstraints": group[0]["nconstraints"]})
     return result
 
 

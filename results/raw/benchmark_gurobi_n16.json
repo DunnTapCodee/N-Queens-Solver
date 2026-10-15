@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "schema_version": 1,
+    "timestamp_utc": "2026-10-15T09:23:27.194234+00:00",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "timeout_s": 10.0,
+    "repetitions": 3,
+    "availability": {
+      "CPLEX MIP": {
+        "installed": true,
+        "usable": true,
+        "version": "22.2.0.0",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "CPLEX CP Optimizer": {
+        "installed": true,
+        "usable": true,
+        "version": "22.2.0.0",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "Gurobi": {
+        "installed": true,
+        "usable": false,
+        "version": null,
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "OR-Tools CP-SAT": {
+        "installed": false,
+        "usable": false,
+        "version": null,
+        "note": "not installed: No module named 'ortools'"
+      },
+      "PySAT/Glucose3": {
+        "installed": true,
+        "usable": true,
+        "version": "1.9.dev15",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "PySAT/CaDiCaL": {
+        "installed": true,
+        "usable": true,
+        "version": "1.9.dev15",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      }
+    }
+  },
+  "records": [
+    {
+      "instance": "nqueens-16",
+      "n": 16,
+      "method": "Gurobi",
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trial": 1,
+      "status": "FEASIBLE",
+      "raw_status": "2",
+      "solver_version": null,
+      "python": "3.11.9",
+      "timeout_s": 10.0,
+      "build_time_s": 0.01895439999998416,
+      "solve_time_s": 0.016787900000053924,
+      "total_time_s": 0.036783799999966504,
+      "nvars": null,
+      "nclauses": null,
+      "nconstraints": 2512,
+      "solution_valid": true,
+      "error": null
+    },
+    {
+      "instance": "nqueens-16",
+      "n": 16,
+      "method": "Gurobi",
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trial": 2,
+      "status": "FEASIBLE",
+      "raw_status": "2",
+      "solver_version": null,
+      "python": "3.11.9",
+      "timeout_s": 10.0,
+      "build_time_s": 0.017765399999916553,
+      "solve_time_s": 0.012645600000041668,
+      "total_time_s": 0.03145300000005591,
+      "nvars": null,
+      "nclauses": null,
+      "nconstraints": 2512,
+      "solution_valid": true,
+      "error": null
+    },
+    {
+      "instance": "nqueens-16",
+      "n": 16,
+      "method": "Gurobi",
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trial": 3,
+      "status": "FEASIBLE",
+      "raw_status": "2",
+      "solver_version": null,
+      "python": "3.11.9",
+      "timeout_s": 10.0,
+      "build_time_s": 0.016734000000042215,
+      "solve_time_s": 0.011527500000056534,
+      "total_time_s": 0.02913100000000668,
+      "nvars": null,
+      "nclauses": null,
+      "nconstraints": 2512,
+      "solution_valid": true,
+      "error": null
+    }
+  ]
+}

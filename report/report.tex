@@ -9,11 +9,11 @@
 \affiliation[1]{organization={Course project}, city={Local environment}}
 \begin{abstract}
 We evaluate N-Queens using PySAT/Glucose3 with pairwise and sequential CNF
-encodings, CPLEX MIP, and CPLEX CP Optimizer. The comparison benchmark has
+encodings, CPLEX MIP, CPLEX CP Optimizer, and Gurobi. The original comparison benchmark has
 three trials for each supported configuration at $N=1,2,3,4,8,16$, producing
 72 records. PySAT and CP Optimizer completed their records; CPLEX MIP reached
-the Community Edition model-size limit at $N=16$. Gurobi and OR-Tools were not
-available, so no results are claimed for them.
+the Community Edition model-size limit at $N=16$. Gurobi was added in a
+separate follow-up; OR-Tools remains unavailable.
 \end{abstract}
 \maketitle
 
@@ -25,12 +25,14 @@ binary diagonal exclusions define the CNF model.
 
 \section{Methods}
 The SAT implementation uses pairwise AMO and Sinz sequential AMO encodings.
-PySAT/Glucose3 is the SAT backend. CPLEX MIP uses binary cell variables, exact
+The medium matrix additionally evaluates binary and commander AMO encodings
+with Glucose3 and CaDiCaL. CPLEX MIP and Gurobi use binary cell variables, exact
 row and column constraints, and pairwise diagonal inequalities. CPLEX CP
 Optimizer uses one integer column variable per row, an all-different
 constraint, and pairwise diagonal inequalities. All returned solutions pass
 the independent \texttt{validate_solution} validator. The OR-Tools adapter is
-implemented but the package is unavailable. Gurobi is not installed.
+implemented but the package is unavailable. Gurobi was unavailable when the
+original comparison artifact was generated and is covered by the follow-up.
 
 \section{Experimental setup}
 The comparison schema records instance size, method, solver and version,
@@ -44,7 +46,7 @@ ERROR and TIMEOUT records. The artifacts are
 \texttt{results/raw/benchmark_comparison_summary.json}.
 
 \section{Correctness and results}
-The latest test run passed 15 tests. The historical SAT benchmark contains 80
+The latest test run passed 25 tests. The historical SAT benchmark contains 80
 records: 60 SAT and 20 UNSAT. The new comparison benchmark contains 72 records:
 PySAT has 24 SAT and 12 UNSAT; CPLEX CP Optimizer has 12 SAT and 6 UNSAT; and
 CPLEX MIP has 9 SAT, 6 UNSAT, and 3 ERROR. The CPLEX MIP errors at $N=16$
@@ -63,6 +65,7 @@ PySAT pairwise & 0.000347 & 0.000852 & 0.016355 & 3\\
 PySAT sequential & 0.000343 & 0.000911 & 0.004742 & 3\\
 CPLEX MIP & 0.008487 & 0.016853 & -- & 3\\
 CPLEX CP Optimizer & 0.031967 & 0.033417 & 0.038857 & 3\\
+Gurobi & 0.000588 & 0.002477 & 0.031453 & 3\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -89,6 +92,15 @@ SAT, UNSAT, FEASIBLE, TIMEOUT, ERROR, and LICENSE\_LIMIT, while
 \texttt{raw\_status} retains the backend status. Binary and Commander were
 evaluated as additional SAT encodings, not as different problem models.
 
+Gurobi was verified separately using the existing $N=16$ artifact (three
+FEASIBLE trials, all independently validated) and a new follow-up matrix at
+$N=1,2,3,4,8$ with three trials per size. The follow-up contains 15 records:
+9 FEASIBLE and 6 UNSAT records, with no timeout or error. Gurobi 13.0.3 was
+reported in the record metadata. Its results are stored in
+\texttt{results/raw/benchmark\_gurobi\_followup.json} and the corresponding
+summary and CSV files. FEASIBLE denotes a valid found placement; it is not
+renamed to OPTIMAL.
+
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.9\linewidth]{../results/figures/medium/runtime_by_method.svg}
@@ -114,15 +126,15 @@ evaluated as additional SAT encodings, not as different problem models.
 The comparison uses one machine, one run process, three repetitions, and
 different model paradigms. Solver startup and model construction affect total
 wall time. CPLEX Community Edition limits the MIP comparison at larger sizes.
-No Gurobi or OR-Tools measurements exist. SVG figures require a LaTeX setup
+OR-Tools measurements do not exist because the package is unavailable. SVG figures require a LaTeX setup
 that supports SVG or prior conversion to PDF/PNG; conversion was not performed
 because no LaTeX toolchain was available.
 
 \section{Conclusion and future work}
-The project now has independently validated SAT, CPLEX MIP, and CPLEX CP
-adapters and a reproducible multi-solver benchmark. Future work is to repeat
-the comparison in a licensed full CPLEX environment and with Gurobi and
-OR-Tools installed, using the same schema and timeout policy.
+The project now has independently validated SAT, CPLEX MIP, CPLEX CP, and
+Gurobi adapters and a reproducible multi-solver benchmark. Future work is to
+repeat the comparison in a licensed full CPLEX environment and, if required by
+the assignment, with OR-Tools installed using the same schema and timeout policy.
 
 \section*{Data Availability}
 The repository remote is

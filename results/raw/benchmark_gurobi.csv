@@ -1,0 +1,10 @@
+instance,n,method,solver,encoding,trial,status,raw_status,solver_version,python,timeout_s,build_time_s,solve_time_s,total_time_s,nvars,nclauses,nconstraints,solution_valid,error
+nqueens-4,4,Gurobi,Gurobi,n/a,1,FEASIBLE,2,,3.11.9,10.0,0.013857000000143671,0.00024450000000797445,0.014254500000106418,,,36,True,
+nqueens-4,4,Gurobi,Gurobi,n/a,2,FEASIBLE,2,,3.11.9,10.0,0.0004439000001639215,7.949999985612521e-05,0.0006040000000666623,,,36,True,
+nqueens-4,4,Gurobi,Gurobi,n/a,3,FEASIBLE,2,,3.11.9,10.0,0.0007107999999789172,9.190000014314137e-05,0.0008815999999569613,,,36,True,
+nqueens-8,8,Gurobi,Gurobi,n/a,1,FEASIBLE,2,,3.11.9,10.0,0.0022473000001355103,0.00020849999987149204,0.0027360999999928026,,,296,True,
+nqueens-8,8,Gurobi,Gurobi,n/a,2,FEASIBLE,2,,3.11.9,10.0,0.0027119999999740685,0.00025030000006154296,0.003200500000048123,,,296,True,
+nqueens-8,8,Gurobi,Gurobi,n/a,3,FEASIBLE,2,,3.11.9,10.0,0.0021728000001530745,0.0002084000000195374,0.0025425999999697524,,,296,True,
+nqueens-16,16,Gurobi,Gurobi,n/a,1,ERROR,GurobiError,,3.11.9,10.0,0.0,0.0,0.030213700000103927,,,0,False,GurobiError: Model too large for size-limited license; visit https://gurobi.com/unrestricted for more information
+nqueens-16,16,Gurobi,Gurobi,n/a,2,ERROR,GurobiError,,3.11.9,10.0,0.0,0.0,0.02062660000001415,,,0,False,GurobiError: Model too large for size-limited license; visit https://gurobi.com/unrestricted for more information
+nqueens-16,16,Gurobi,Gurobi,n/a,3,ERROR,GurobiError,,3.11.9,10.0,0.0,0.0,0.02455720000011752,,,0,False,GurobiError: Model too large for size-limited license; visit https://gurobi.com/unrestricted for more information

@@ -1,0 +1,4 @@
+instance,n,method,solver,encoding,trial,status,raw_status,solver_version,python,timeout_s,build_time_s,solve_time_s,total_time_s,nvars,nclauses,nconstraints,solution_valid,error
+nqueens-16,16,Gurobi,Gurobi,n/a,1,FEASIBLE,2,,3.11.9,10.0,0.01895439999998416,0.016787900000053924,0.036783799999966504,,,2512,True,
+nqueens-16,16,Gurobi,Gurobi,n/a,2,FEASIBLE,2,,3.11.9,10.0,0.017765399999916553,0.012645600000041668,0.03145300000005591,,,2512,True,
+nqueens-16,16,Gurobi,Gurobi,n/a,3,FEASIBLE,2,,3.11.9,10.0,0.016734000000042215,0.011527500000056534,0.02913100000000668,,,2512,True,

@@ -34,4 +34,7 @@ def solve_gurobi(n: int, timeout: float | None = None) -> SolveResult:
         if not validate_solution(queens, n): return SolveResult("ERROR", None, build_time, solve_time, n*n, model.NumConstrs, "Gurobi", "decoded model failed validation", str(model.Status))
         return SolveResult("FEASIBLE", queens, build_time, solve_time, n*n, model.NumConstrs, "Gurobi", None, str(model.Status))
     except Exception as exc:
-        return SolveResult("ERROR", None, 0.0, 0.0, 0, 0, "Gurobi", f"{type(exc).__name__}: {exc}", type(exc).__name__)
+        message = f"{type(exc).__name__}: {exc}"
+        lowered = message.lower()
+        status = "LICENSE_LIMIT" if any(term in lowered for term in ("license", "size-limited", "model too large")) else "ERROR"
+        return SolveResult(status, None, 0.0, 0.0, 0, 0, "Gurobi", message, type(exc).__name__)

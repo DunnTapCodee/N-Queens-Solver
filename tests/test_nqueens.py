@@ -8,6 +8,7 @@ from nqueens.solver import solve
 from nqueens.cp_sat import solve_cp_sat
 from nqueens.cplex_mip import solve_cplex_mip
 from nqueens.cplex_cp import solve_cplex_cp
+from nqueens.gurobi import solve_gurobi
 
 
 @pytest.mark.parametrize("n,status", [(1, "SAT"), (2, "UNSAT"), (3, "UNSAT"), (4, "SAT")])
@@ -66,6 +67,14 @@ def test_saved_benchmark_json_csv_schema_matches():
 @pytest.mark.parametrize("adapter", [solve_cplex_mip, solve_cplex_cp])
 def test_cplex_adapters_smoke(adapter):
     result = adapter(4, timeout=5)
+    if result.status == "ERROR" and result.error and "unavailable" in result.error:
+        pytest.skip(result.error)
+    assert result.status in {"SAT", "FEASIBLE"}
+    assert validate_solution(result.solution, 4)
+
+
+def test_gurobi_adapter_smoke():
+    result = solve_gurobi(4, timeout=5)
     if result.status == "ERROR" and result.error and "unavailable" in result.error:
         pytest.skip(result.error)
     assert result.status in {"SAT", "FEASIBLE"}

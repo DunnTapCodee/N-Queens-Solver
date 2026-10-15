@@ -11,7 +11,7 @@ python scripts/check_environment.py
 python -m pytest -q
 ```
 
-The verified environment has Python 3.11.9, PySAT, `cplex==22.2.0.1`, and `docplex==2.32.264`. Gurobi and OR-Tools are not installed. CPLEX Community Edition is usable for small models but enforces model-size limits.
+The verified environment has Python 3.11.9, PySAT, `cplex==22.2.0.1`, `docplex==2.32.264`, and Gurobi 13.0.3. OR-Tools is not installed. CPLEX Community Edition is usable for small models but enforces model-size limits.
 
 ## Benchmarks
 
@@ -33,6 +33,8 @@ python scripts/validate_comparison.py
 
 The comparison benchmark records SAT, UNSAT, TIMEOUT, and ERROR separately. Timeouts and errors are not included in successful-runtime medians. At N=16, the CPLEX MIP Community Edition model limit is recorded as ERROR rather than being misreported as timeout or UNSAT.
 
+The Gurobi follow-up benchmark is stored separately in `results/raw/benchmark_gurobi_followup.json`, its CSV, and its summary. It uses N=1,2,3,4,8, three trials, and a 10-second timeout. Gurobi FEASIBLE results are valid placements and are not reported as OPTIMAL.
+
 The approved medium matrix is generated separately and does not overwrite historical artifacts:
 
 ```powershell
@@ -52,6 +54,8 @@ metadata rather than represented as a solver failure.
 
 - Historical SAT data: `results/raw/benchmark_repeated.*`
 - Comparison data: `results/raw/benchmark_comparison.*`
+- Gurobi follow-up data: `results/raw/benchmark_gurobi_followup.*`
+- Backend manifest: `results/raw/backend_manifest.json`
 - SAT figures: `results/figures/`
 - Comparison figures: `results/figures/comparison/`
 - Report source: `report/report.tex`

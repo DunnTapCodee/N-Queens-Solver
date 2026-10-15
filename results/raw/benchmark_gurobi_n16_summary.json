@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "schema_version": 1,
+    "timestamp_utc": "2026-10-15T09:23:27.194234+00:00",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "timeout_s": 10.0,
+    "repetitions": 3,
+    "availability": {
+      "CPLEX MIP": {
+        "installed": true,
+        "usable": true,
+        "version": "22.2.0.0",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "CPLEX CP Optimizer": {
+        "installed": true,
+        "usable": true,
+        "version": "22.2.0.0",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "Gurobi": {
+        "installed": true,
+        "usable": false,
+        "version": null,
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "OR-Tools CP-SAT": {
+        "installed": false,
+        "usable": false,
+        "version": null,
+        "note": "not installed: No module named 'ortools'"
+      },
+      "PySAT/Glucose3": {
+        "installed": true,
+        "usable": true,
+        "version": "1.9.dev15",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "PySAT/CaDiCaL": {
+        "installed": true,
+        "usable": true,
+        "version": "1.9.dev15",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      }
+    }
+  },
+  "summaries": [
+    {
+      "n": 16,
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trials": 3,
+      "sat": 0,
+      "unsat": 0,
+      "timeouts": 0,
+      "errors": 0,
+      "median_total_time_s": 0.03145300000005591,
+      "mean_total_time_s": 0.03245593333334303,
+      "stdev_total_time_s": 0.00392374099720026,
+      "median_build_time_s": 0.017765399999916553,
+      "median_solve_time_s": 0.012645600000041668,
+      "nvars": null,
+      "nconstraints": 2512
+    }
+  ]
+}
