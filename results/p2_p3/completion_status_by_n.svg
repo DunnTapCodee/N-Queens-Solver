@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620">
+<style>text{font-family:Arial,sans-serif;font-size:12px} .title{font-size:16px;font-weight:bold} .axis{stroke:#333;stroke-width:1} .grid{stroke:#ddd;stroke-width:1} .legend{font-size:11px}</style>
+<text x="550.0" y="24" text-anchor="middle" class="title">P1 completion status by family and N</text>
+<line x1="70" y1="55.0" x2="1070" y2="55.0" class="grid"/><text x="62" y="59.0" text-anchor="end">20</text>
+<line x1="70" y1="150.0" x2="1070" y2="150.0" class="grid"/><text x="62" y="154.0" text-anchor="end">16</text>
+<line x1="70" y1="245.0" x2="1070" y2="245.0" class="grid"/><text x="62" y="249.0" text-anchor="end">12</text>
+<line x1="70" y1="340.0" x2="1070" y2="340.0" class="grid"/><text x="62" y="344.0" text-anchor="end">8</text>
+<line x1="70" y1="435.0" x2="1070" y2="435.0" class="grid"/><text x="62" y="439.0" text-anchor="end">4</text>
+<line x1="70" y1="530.0" x2="1070" y2="530.0" class="grid"/><text x="62" y="534.0" text-anchor="end">0</text>
+<rect x="75.0" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="90.8" y="546" transform="rotate(55 90.8 546)" text-anchor="start">Glucose3 N=4</text>
+<rect x="116.7" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="132.5" y="546" transform="rotate(55 132.5 546)" text-anchor="start">Glucose3 N=8</text>
+<rect x="158.3" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="174.2" y="546" transform="rotate(55 174.2 546)" text-anchor="start">Glucose3 N=16</text>
+<rect x="200.0" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="215.8" y="546" transform="rotate(55 215.8 546)" text-anchor="start">Glucose3 N=32</text>
+<rect x="241.7" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="257.5" y="546" transform="rotate(55 257.5 546)" text-anchor="start">Glucose3 N=64</text>
+<rect x="283.3" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="299.2" y="546" transform="rotate(55 299.2 546)" text-anchor="start">CaDiCaL N=4</text>
+<rect x="325.0" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="340.8" y="546" transform="rotate(55 340.8 546)" text-anchor="start">CaDiCaL N=8</text>
+<rect x="366.7" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="382.5" y="546" transform="rotate(55 382.5 546)" text-anchor="start">CaDiCaL N=16</text>
+<rect x="408.3" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="424.2" y="546" transform="rotate(55 424.2 546)" text-anchor="start">CaDiCaL N=32</text>
+<rect x="450.0" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="465.8" y="546" transform="rotate(55 465.8 546)" text-anchor="start">CaDiCaL N=64</text>
+<rect x="491.7" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="507.5" y="546" transform="rotate(55 507.5 546)" text-anchor="start">DPLL fallback N=4</text>
+<rect x="533.3" y="55.0" width="31.7" height="475.0" fill="#1f77b4"/>
+<text x="549.2" y="546" transform="rotate(55 549.2 546)" text-anchor="start">DPLL fallback N=8</text>
+<rect x="575.0" y="411.2" width="31.7" height="118.8" fill="#1f77b4"/>
+<text x="590.8" y="546" transform="rotate(55 590.8 546)" text-anchor="start">CPLEX MIP N=4</text>
+<rect x="616.7" y="411.2" width="31.7" height="118.8" fill="#1f77b4"/>
+<text x="632.5" y="546" transform="rotate(55 632.5 546)" text-anchor="start">CPLEX MIP N=8</text>
+<rect x="658.3" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="674.2" y="546" transform="rotate(55 674.2 546)" text-anchor="start">CPLEX CP Optimizer N=4</text>
+<rect x="700.0" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="715.8" y="546" transform="rotate(55 715.8 546)" text-anchor="start">CPLEX CP Optimizer N=8</text>
+<rect x="741.7" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="757.5" y="546" transform="rotate(55 757.5 546)" text-anchor="start">CPLEX CP Optimizer N=16</text>
+<rect x="783.3" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="799.2" y="546" transform="rotate(55 799.2 546)" text-anchor="start">CPLEX CP Optimizer N=32</text>
+<rect x="825.0" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="840.8" y="546" transform="rotate(55 840.8 546)" text-anchor="start">CPLEX CP Optimizer N=64</text>
+<rect x="866.7" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="882.5" y="546" transform="rotate(55 882.5 546)" text-anchor="start">Gurobi N=4</text>
+<rect x="908.3" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="924.2" y="546" transform="rotate(55 924.2 546)" text-anchor="start">Gurobi N=8</text>
+<rect x="950.0" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="965.8" y="546" transform="rotate(55 965.8 546)" text-anchor="start">Gurobi N=16</text>
+<rect x="991.7" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="1007.5" y="546" transform="rotate(55 1007.5 546)" text-anchor="start">Gurobi N=32</text>
+<rect x="1033.3" y="411.2" width="31.7" height="118.8" fill="#ff7f0e"/>
+<text x="1049.2" y="546" transform="rotate(55 1049.2 546)" text-anchor="start">Gurobi N=64</text>
+<rect x="70" y="595" width="12" height="12" fill="#1f77b4"/><text x="86" y="606">SAT</text>
+<rect x="195" y="595" width="12" height="12" fill="#9467bd"/><text x="211" y="606">UNSAT</text>
+<rect x="320" y="595" width="12" height="12" fill="#ff7f0e"/><text x="336" y="606">FEASIBLE</text>
+<rect x="445" y="595" width="12" height="12" fill="#2ca02c"/><text x="461" y="606">OPTIMAL</text>
+<rect x="570" y="595" width="12" height="12" fill="#d62728"/><text x="586" y="606">TIMEOUT</text>
+<rect x="695" y="595" width="12" height="12" fill="#8c564b"/><text x="711" y="606">ERROR</text>
+<rect x="820" y="595" width="12" height="12" fill="#7f7f7f"/><text x="836" y="606">LICENSE_LIMIT</text>
+<line x1="70" y1="530" x2="1070" y2="530" class="axis"/>
+<line x1="70" y1="55" x2="70" y2="530" class="axis"/>
+</svg>

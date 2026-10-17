@@ -14,6 +14,8 @@ from nqueens.cplex_mip import solve_cplex_mip
 from nqueens.cp_sat import solve_cp_sat
 from nqueens.solver import solve as solve_sat
 from nqueens.gurobi import solve_gurobi
+from nqueens.benchmark_schema import ensure_output_available, metric_fields, new_run_id, status_counts
+from nqueens.model import validate_solution
 
 
 def solver_version(name: str) -> str | None:
@@ -50,6 +52,7 @@ def dispatch(name: str, n: int, encoding: str, timeout: float):
     if name in {"SAT", "SAT/Glucose3", "SAT/CaDiCaL"}:
         backend = "cadical195" if name == "SAT/CaDiCaL" else "glucose3"
         return solve_sat(n, encoding, timeout=timeout, prefer_pysat=True, sat_solver=backend)
+    if name == "DPLL fallback": return solve_sat(n, encoding, timeout=timeout, prefer_pysat=False)
     if name == "CPLEX MIP": return solve_cplex_mip(n, timeout)
     if name == "CPLEX CP Optimizer": return solve_cplex_cp(n, timeout)
     if name == "OR-Tools CP-SAT": return solve_cp_sat(n, timeout)
@@ -85,19 +88,25 @@ def main() -> None:
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--timeout", type=float, default=10.0)
     parser.add_argument("--output", default="results/raw/benchmark_comparison.json")
+    parser.add_argument("--force", action="store_true", help="allow overwriting explicitly")
     args = parser.parse_args()
     if args.repetitions < 1: parser.error("--repetitions must be positive")
     records = []
     out = Path(args.output)
-    meta = {"schema_version": 1, "timestamp_utc": datetime.now(timezone.utc).isoformat(), "python": sys.version, "platform": platform.platform(), "timeout_s": args.timeout, "repetitions": args.repetitions, "availability": availability()}
+    summary_path = out.with_name(out.stem + "_summary.json")
+    ensure_output_available((out, out.with_suffix(".csv"), summary_path), args.force)
+    run_id = new_run_id()
+    meta = {"schema_version": 1, "run_id": run_id, "timestamp_utc": datetime.now(timezone.utc).isoformat(), "python": sys.version, "platform": platform.platform(), "timeout_s": args.timeout, "repetitions": args.repetitions, "availability": availability()}
     write_artifacts(out, {"schema_version": 1, "metadata": meta, "records": records})
     for solver in args.solvers:
-        encs = args.encodings if solver in {"SAT", "SAT/Glucose3", "SAT/CaDiCaL", "SAT"} else ["n/a"]
+        encs = args.encodings if solver in {"SAT", "SAT/Glucose3", "SAT/CaDiCaL", "DPLL fallback"} else ["n/a"]
         for n in args.sizes:
             for encoding in encs:
                 for trial in range(1, args.repetitions + 1):
                     started = perf_counter(); result = dispatch(solver, n, encoding, args.timeout); total = perf_counter() - started
-                    record = {"instance": f"nqueens-{n}", "n": n, "method": solver, "solver": result.backend, "encoding": encoding, "trial": trial, "status": result.status, "raw_status": result.raw_status, "solver_version": solver_version(result.backend), "python": platform.python_version(), "timeout_s": args.timeout, "build_time_s": result.encoding_time, "solve_time_s": result.solve_time, "total_time_s": total, "nvars": result.nvars if encoding != "n/a" else None, "nclauses": result.nclauses if encoding != "n/a" else None, "nconstraints": result.nclauses, "solution_valid": result.solution is not None, "error": result.error}
+                    solution_valid = validate_solution(result.solution, n) if result.solution is not None else None
+                    record = {"instance": f"nqueens-{n}", "n": n, "method": solver, "solver": result.backend, "encoding": encoding, "trial": trial, "status": result.status, "raw_status": result.raw_status, "solver_version": solver_version(result.backend), "python": platform.python_version(), "timeout_s": args.timeout, "build_time_s": result.encoding_time, "solve_time_s": result.solve_time, "total_time_s": total, "nvars": result.nvars if encoding != "n/a" else None, "nclauses": result.nclauses if encoding != "n/a" else None, "nconstraints": result.nclauses, "solution_valid": solution_valid, "validator": "nqueens.model.validate_solution" if result.solution is not None else None, "error": result.error}
+                    record.update(metric_fields(result, encoding))
                     records.append(record); write_artifacts(out, {"schema_version": 1, "metadata": meta, "records": records})
                     print(f"{solver:20} n={n:>3} enc={encoding:10} trial={trial} {result.status:7} total={total:.6f}s")
     summary = make_summary(records)

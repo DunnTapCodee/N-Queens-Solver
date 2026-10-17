@@ -1,0 +1,14 @@
+We study the ordinary N-Queens feasibility problem using four CNF at-most-one
+encodings---Pairwise, Sequential Counter, Binary, and Commander---with the
+Glucose3 and CaDiCaL backends. The primary controlled benchmark contains 300
+records with five repetitions per executed cell and a 10-second timeout. SAT
+backends cover $N\in\{4,8,16,32,64\}$; the DPLL fallback covers $N=4,8$ and
+CPLEX MIP covers $N=4,8$ because of the Community Edition model-size limit.
+CP Optimizer and Gurobi cover all five sizes. The primary data contain 250 SAT
+and 50 FEASIBLE outcomes, and all 300 returned placements pass an independent
+validator. A separate CP-SAT run contains 25 OPTIMAL trials, five each at
+$N=4,8,16,32,64$, with all returned placements validated. FEASIBLE is kept
+distinct from OPTIMAL. Results support
+within-family comparisons, but not an unqualified ranking across different
+formulations. Peak memory, Product encoding, and scalability to $N=1331$ were
+not measured.

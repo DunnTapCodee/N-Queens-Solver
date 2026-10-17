@@ -1,0 +1,16 @@
+instance,n,method,solver,encoding,trial,status,raw_status,solver_version,python,timeout_s,build_time_s,solve_time_s,total_time_s,nvars,nclauses,nconstraints,solution_valid,validator,error,construction_time_s,solver_time_s,sat_nvars,sat_nclauses,model_nvars,model_nconstraints
+nqueens-4,4,DPLL fallback,none,n/a,1,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,6.379999103955925e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-4,4,DPLL fallback,none,n/a,2,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,0.00017250000382773578,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-4,4,DPLL fallback,none,n/a,3,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,6.10999995842576e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-4,4,DPLL fallback,none,n/a,4,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,7.350000669248402e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-4,4,DPLL fallback,none,n/a,5,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,5.2799994591623545e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-8,8,DPLL fallback,none,n/a,1,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,5.77000027988106e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-8,8,DPLL fallback,none,n/a,2,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,6.280001252889633e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-8,8,DPLL fallback,none,n/a,3,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,7.750000804662704e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-8,8,DPLL fallback,none,n/a,4,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,5.189998773857951e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-8,8,DPLL fallback,none,n/a,5,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,7.420001202262938e-05,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-16,16,DPLL fallback,none,n/a,1,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,0.00016480000340379775,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-16,16,DPLL fallback,none,n/a,2,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,0.00016850000247359276,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-16,16,DPLL fallback,none,n/a,3,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,0.00011100000119768083,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-16,16,DPLL fallback,none,n/a,4,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,0.00012100001913495362,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0
+nqueens-16,16,DPLL fallback,none,n/a,5,ERROR,ValueError,,3.11.9,10.0,0.0,0.0,0.00017519999528303742,,,0,,,"ValueError: encoding must be 'pairwise', 'sequential', 'binary', or 'commander'",0.0,0.0,,,0,0

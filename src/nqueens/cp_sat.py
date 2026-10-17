@@ -9,7 +9,7 @@ def solve_cp_sat(n: int, timeout: float | None = None, seed: int = 0) -> SolveRe
     try:
         from ortools.sat.python import cp_model  # type: ignore
     except ImportError as exc:
-        return SolveResult("ERROR", None, 0.0, 0.0, 0, 0, "OR-Tools CP-SAT", f"dependency unavailable: {exc}")
+        return SolveResult("ERROR", None, 0.0, 0.0, 0, None, "OR-Tools CP-SAT", f"dependency unavailable: {exc}")
     try:
         model = cp_model.CpModel()
         queens = [model.NewIntVar(0, n - 1, f"q_{r}") for r in range(n)]
@@ -24,11 +24,11 @@ def solve_cp_sat(n: int, timeout: float | None = None, seed: int = 0) -> SolveRe
         solve_started = perf_counter()
         status = solver.Solve(model)
         solve_time = perf_counter() - solve_started
-        mapping = {cp_model.OPTIMAL: "SAT", cp_model.FEASIBLE: "SAT", cp_model.INFEASIBLE: "UNSAT", cp_model.UNKNOWN: "TIMEOUT"}
+        mapping = {cp_model.OPTIMAL: "OPTIMAL", cp_model.FEASIBLE: "FEASIBLE", cp_model.INFEASIBLE: "UNSAT", cp_model.UNKNOWN: "TIMEOUT"}
         state = mapping.get(status, "ERROR")
-        solution = [solver.Value(q) for q in queens] if state == "SAT" else None
-        if state == "SAT" and not validate_solution(solution or [], n):
-            return SolveResult("ERROR", None, build_time, solve_time, n, 0, "OR-Tools CP-SAT", "decoded model failed validation", str(status))
-        return SolveResult("FEASIBLE" if state == "SAT" else state, solution, build_time, solve_time, n, 0, "OR-Tools CP-SAT", None, str(status))
+        solution = [solver.Value(q) for q in queens] if state in {"FEASIBLE", "OPTIMAL"} else None
+        if state in {"FEASIBLE", "OPTIMAL"} and not validate_solution(solution or [], n):
+            return SolveResult("ERROR", None, build_time, solve_time, n, None, "OR-Tools CP-SAT", "decoded model failed validation", str(status))
+        return SolveResult(state, solution, build_time, solve_time, n, None, "OR-Tools CP-SAT", None, str(status))
     except Exception as exc:
-        return SolveResult("ERROR", None, 0.0, 0.0, 0, 0, "OR-Tools CP-SAT", f"{type(exc).__name__}: {exc}", type(exc).__name__)
+        return SolveResult("ERROR", None, 0.0, 0.0, 0, None, "OR-Tools CP-SAT", f"{type(exc).__name__}: {exc}", type(exc).__name__)

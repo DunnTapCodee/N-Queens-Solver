@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "metadata": {
+    "schema_version": 1,
+    "run_id": "20261017T033624Z-30413dee80c7",
+    "timestamp_utc": "2026-10-17T03:36:24.037258+00:00",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "timeout_s": 10.0,
+    "repetitions": 5,
+    "availability": {
+      "CPLEX MIP": {
+        "installed": true,
+        "usable": true,
+        "version": "22.2.0.0",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "CPLEX CP Optimizer": {
+        "installed": true,
+        "usable": true,
+        "version": "22.2.0.0",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "Gurobi": {
+        "installed": true,
+        "usable": true,
+        "version": "13.0.3",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "OR-Tools CP-SAT": {
+        "installed": false,
+        "usable": false,
+        "version": null,
+        "note": "not installed: No module named 'ortools'"
+      },
+      "PySAT/Glucose3": {
+        "installed": true,
+        "usable": true,
+        "version": "1.9.dev15",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      },
+      "PySAT/CaDiCaL": {
+        "installed": true,
+        "usable": true,
+        "version": "1.9.dev15",
+        "note": "backend instantiation checked; benchmark status recorded separately"
+      }
+    }
+  },
+  "summaries": [
+    {
+      "n": 4,
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trials": 5,
+      "sat": 0,
+      "unsat": 0,
+      "feasible": 5,
+      "optimal": 0,
+      "timeouts": 0,
+      "errors": 0,
+      "license_limits": 0,
+      "median_total_time_s": 0.002051099989330396,
+      "mean_total_time_s": 0.0037529400025960056,
+      "stdev_total_time_s": 0.0032847494484497097,
+      "median_build_time_s": 0.0015452999796252698,
+      "median_solve_time_s": 0.00025170002481900156,
+      "nvars": null,
+      "nconstraints": 36
+    },
+    {
+      "n": 8,
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trials": 5,
+      "sat": 0,
+      "unsat": 0,
+      "feasible": 5,
+      "optimal": 0,
+      "timeouts": 0,
+      "errors": 0,
+      "license_limits": 0,
+      "median_total_time_s": 0.0031086999806575477,
+      "mean_total_time_s": 0.0032972200016956775,
+      "stdev_total_time_s": 0.0006590274223528641,
+      "median_build_time_s": 0.002677799988305196,
+      "median_solve_time_s": 0.0002547999902162701,
+      "nvars": null,
+      "nconstraints": 296
+    },
+    {
+      "n": 16,
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trials": 5,
+      "sat": 0,
+      "unsat": 0,
+      "feasible": 5,
+      "optimal": 0,
+      "timeouts": 0,
+      "errors": 0,
+      "license_limits": 0,
+      "median_total_time_s": 0.0334904000046663,
+      "mean_total_time_s": 0.03747928000520915,
+      "stdev_total_time_s": 0.010222033867962322,
+      "median_build_time_s": 0.01759120001224801,
+      "median_solve_time_s": 0.012331699981587008,
+      "nvars": null,
+      "nconstraints": 2512
+    },
+    {
+      "n": 32,
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trials": 5,
+      "sat": 0,
+      "unsat": 0,
+      "feasible": 5,
+      "optimal": 0,
+      "timeouts": 0,
+      "errors": 0,
+      "license_limits": 0,
+      "median_total_time_s": 0.24384599999757484,
+      "mean_total_time_s": 0.2626630600017961,
+      "stdev_total_time_s": 0.047047227260451956,
+      "median_build_time_s": 0.1477424000040628,
+      "median_solve_time_s": 0.08917670001392253,
+      "nvars": null,
+      "nconstraints": 20896
+    },
+    {
+      "n": 64,
+      "solver": "Gurobi",
+      "encoding": "n/a",
+      "trials": 5,
+      "sat": 0,
+      "unsat": 0,
+      "feasible": 5,
+      "optimal": 0,
+      "timeouts": 0,
+      "errors": 0,
+      "license_limits": 0,
+      "median_total_time_s": 2.0824382999853697,
+      "mean_total_time_s": 1.808071759995073,
+      "stdev_total_time_s": 0.42777737551758316,
+      "median_build_time_s": 1.8714614000055008,
+      "median_solve_time_s": 0.05260709999129176,
+      "nvars": null,
+      "nconstraints": 170816
+    }
+  ]
+}

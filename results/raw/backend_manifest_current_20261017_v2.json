@@ -1,0 +1,162 @@
+{
+  "schema_version": 2,
+  "run_id": "20261017T031327Z-bd75b95bbbd7",
+  "encoding": "sequential",
+  "cases": {
+    "SAT": {
+      "n": 4
+    },
+    "UNSAT": {
+      "n": 3
+    }
+  },
+  "checks": {
+    "PySAT/Glucose3": {
+      "detected": true,
+      "initialized": true,
+      "sat_case": {
+        "status": "SAT",
+        "raw_status": "True",
+        "solution_valid": true,
+        "error": null,
+        "backend": "PySAT/glucose3"
+      },
+      "unsat_case": {
+        "status": "UNSAT",
+        "raw_status": "False",
+        "solution_valid": null,
+        "error": null,
+        "backend": "PySAT/glucose3"
+      },
+      "sat_solved": true,
+      "unsat_confirmed": true,
+      "error": null
+    },
+    "PySAT/CaDiCaL": {
+      "detected": true,
+      "initialized": true,
+      "sat_case": {
+        "status": "SAT",
+        "raw_status": "True",
+        "solution_valid": true,
+        "error": null,
+        "backend": "PySAT/cadical195"
+      },
+      "unsat_case": {
+        "status": "UNSAT",
+        "raw_status": "False",
+        "solution_valid": null,
+        "error": null,
+        "backend": "PySAT/cadical195"
+      },
+      "sat_solved": true,
+      "unsat_confirmed": true,
+      "error": null
+    },
+    "DPLL fallback": {
+      "detected": true,
+      "initialized": true,
+      "sat_case": {
+        "status": "SAT",
+        "raw_status": null,
+        "solution_valid": true,
+        "error": null,
+        "backend": "internal-dpll"
+      },
+      "unsat_case": {
+        "status": "UNSAT",
+        "raw_status": null,
+        "solution_valid": null,
+        "error": null,
+        "backend": "internal-dpll"
+      },
+      "sat_solved": true,
+      "unsat_confirmed": true,
+      "error": null
+    },
+    "CPLEX MIP": {
+      "detected": true,
+      "initialized": true,
+      "sat_case": {
+        "status": "SAT",
+        "raw_status": "integer optimal solution",
+        "solution_valid": true,
+        "error": null,
+        "backend": "CPLEX MIP"
+      },
+      "unsat_case": {
+        "status": "UNSAT",
+        "raw_status": "integer infeasible",
+        "solution_valid": null,
+        "error": "integer infeasible",
+        "backend": "CPLEX MIP"
+      },
+      "sat_solved": true,
+      "unsat_confirmed": true,
+      "error": null
+    },
+    "CPLEX CP Optimizer": {
+      "detected": true,
+      "initialized": true,
+      "sat_case": {
+        "status": "FEASIBLE",
+        "raw_status": "feasible",
+        "solution_valid": true,
+        "error": null,
+        "backend": "CPLEX CP Optimizer"
+      },
+      "unsat_case": {
+        "status": "UNSAT",
+        "raw_status": "infeasible",
+        "solution_valid": null,
+        "error": "infeasible",
+        "backend": "CPLEX CP Optimizer"
+      },
+      "sat_solved": true,
+      "unsat_confirmed": true,
+      "error": null
+    },
+    "OR-Tools CP-SAT": {
+      "detected": false,
+      "initialized": false,
+      "sat_case": {
+        "status": "ERROR",
+        "raw_status": null,
+        "solution_valid": null,
+        "error": "dependency unavailable: No module named 'ortools'",
+        "backend": "OR-Tools CP-SAT"
+      },
+      "unsat_case": {
+        "status": "ERROR",
+        "raw_status": null,
+        "solution_valid": null,
+        "error": "dependency unavailable: No module named 'ortools'",
+        "backend": "OR-Tools CP-SAT"
+      },
+      "sat_solved": false,
+      "unsat_confirmed": false,
+      "error": "dependency unavailable: No module named 'ortools'"
+    },
+    "Gurobi": {
+      "detected": true,
+      "initialized": true,
+      "sat_case": {
+        "status": "FEASIBLE",
+        "raw_status": "2",
+        "solution_valid": true,
+        "error": null,
+        "backend": "Gurobi"
+      },
+      "unsat_case": {
+        "status": "UNSAT",
+        "raw_status": "INFEASIBLE",
+        "solution_valid": null,
+        "error": null,
+        "backend": "Gurobi"
+      },
+      "sat_solved": true,
+      "unsat_confirmed": true,
+      "error": null
+    }
+  }
+}
